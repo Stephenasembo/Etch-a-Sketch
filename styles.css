@@ -1,9 +1,11 @@
 #container {
     display: flex;
-    width: 600px;
+    width: 400px;
     height: 400px;
     flex-wrap: wrap;
-
+    align-content: stretch;
+    margin: auto;
+    border: 2px solid blue;
 }
 
 .divs {
