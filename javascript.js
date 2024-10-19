@@ -53,5 +53,15 @@ function createDivs(numberOfDiv)
 
 function hoverEffect(div)
 {
-    div.style.backgroundColor = 'rgb(255, 0, 0)';
+    div.style.backgroundColor = getRandomRGB();
+}
+
+function getRandomRGB()
+{
+    let red = Math.floor((Math.random() * 256));
+    let blue = Math.floor((Math.random() * 256));
+    let green = Math.floor((Math.random() * 256));
+
+    rgbValues = `rgb(${red}, ${blue}, ${green})`;
+    return rgbValues;
 }
