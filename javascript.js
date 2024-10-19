@@ -1,15 +1,22 @@
 const container = document.querySelector('#container');
 let squares = prompt('How many squares do you want ?');
 
+const containerWidth = 400;
+const containerHeight = 400;
+
 function createDivs(numberOfDiv)
 {
-    for (let i = 0; i < numberOfDiv; i++)
+    for (let row = 0; row < numberOfDiv; row++)
     {
-        const div = document.createElement('div');
-        div.setAttribute('class', 'divs');
-        container.appendChild(div);
-        div.style.padding = '10px';
-        div.addEventListener('mouseenter', () => hoverEffect(div));
+        for (let i = 0; i < numberOfDiv; i++)
+            {
+                const div = document.createElement('div');
+                div.setAttribute('class', 'divs');
+                container.appendChild(div);
+                div.style.width = (containerWidth / numberOfDiv) + 'px';
+                div.style.height = (containerHeight / numberOfDiv) + 'px';
+                div.addEventListener('mouseenter', () => hoverEffect(div));
+            }        
     }
 }
 
