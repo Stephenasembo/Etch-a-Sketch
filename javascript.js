@@ -43,8 +43,8 @@ function createDivs(numberOfDiv)
                     if (+div.style.opacity < 1)
                     {
                         div.style.opacity = +div.style.opacity + 0.1;
-                        hoverEffect(div);
                     }
+                    hoverEffect(div);
                 });
                     
             }        
