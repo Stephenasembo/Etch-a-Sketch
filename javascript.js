@@ -1,11 +1,32 @@
+const body = document.querySelector('body');
 const container = document.querySelector('#container');
-let squares = prompt('How many squares do you want ?');
+const button = document.createElement('button')
 
-const containerWidth = 400;
-const containerHeight = 400;
+const containerWidth = 500;
+const containerHeight = 500;
+
+body.insertBefore(button, container);
+
+button.textContent = 'Create Grid';
+button.addEventListener('click', () => {
+    container.innerText = '';
+    let squares = prompt('How many squares per side do you want ? Maximum squares is 100');
+    createDivs(squares);
+})
+
 
 function createDivs(numberOfDiv)
 {
+    if (numberOfDiv < 0)
+    {
+        alert('Negative numbers are not supported');
+        return;
+    }
+    if (numberOfDiv > 100)
+    {
+        alert('You have exceeded the maximum limit on number of squares per side.\n Please try again.');
+        return;
+    }
     for (let row = 0; row < numberOfDiv; row++)
     {
         for (let i = 0; i < numberOfDiv; i++)
@@ -19,8 +40,6 @@ function createDivs(numberOfDiv)
             }        
     }
 }
-
-createDivs(squares);
 
 function hoverEffect(div)
 {
