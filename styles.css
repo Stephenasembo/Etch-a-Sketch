@@ -9,6 +9,6 @@
 
 .divs {
     flex: 1 1 auto;
-    border: 2px solid black;
     box-sizing: border-box;
+    border: 1px solid black;
 }

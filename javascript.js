@@ -14,6 +14,8 @@ button.addEventListener('click', () => {
     createDivs(squares);
 })
 
+let opacity = 0;
+let coloredDiv = 0;
 
 function createDivs(numberOfDiv)
 {
@@ -36,13 +38,20 @@ function createDivs(numberOfDiv)
                 container.appendChild(div);
                 div.style.width = (containerWidth / numberOfDiv) + 'px';
                 div.style.height = (containerHeight / numberOfDiv) + 'px';
-                div.addEventListener('mouseenter', () => hoverEffect(div));
+                div.style.opacity = 0;
+                div.addEventListener('mouseenter', () => {
+                    if (+div.style.opacity < 1)
+                    {
+                        div.style.opacity = +div.style.opacity + 0.1;
+                        hoverEffect(div);
+                    }
+                });
+                    
             }        
     }
 }
 
 function hoverEffect(div)
 {
-    div.style.backgroundColor = 'black';
+    div.style.backgroundColor = 'rgb(255, 0, 0)';
 }
-
