@@ -45,8 +45,7 @@ function createDivs(numberOfDiv)
                         div.style.opacity = +div.style.opacity + 0.1;
                     }
                     hoverEffect(div);
-                });
-                    
+                });                    
             }        
     }
 }
